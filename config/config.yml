@@ -1,0 +1,9 @@
+development:
+  mailchimp_api_key: abbfc288cf969c4588da9b845517b38e-us6
+  mailchimp_candidate_list_name: testlist
+  mailchimp_recruiter_list_name: recruittestlist
+  
+production:
+  mailchimp_api_key: abbfc288cf969c4588da9b845517b38e-us6
+  mailchimp_candidate_list_name: testlist
+  mailchimp_recruiter_list_name: recruittestlist

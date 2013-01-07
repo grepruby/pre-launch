@@ -1,0 +1,49 @@
+<div class="span3">
+  <div class="well sidebar-nav" style="">
+      <div class="subs-list">
+        <p>
+          <h3>Are you a Candidate?</h3>
+          Subscribe here for latest news and offer
+        </p>
+        <hr/>
+        <%= simple_form_for @subscriber, :url => "/subscribe" do |f| %>
+          <%= f.input :sub_type,:as => :hidden, :input_html => { :value => "candidate" }%>
+          <div class="controls-row">
+            <div class="span2">
+              <%= f.label "Email:" %>
+            </div>
+            <div class="span5">
+              <%= f.text_field :email %>
+            </div>
+          </div>
+          <%= f.button :submit, :value => "Subscribe Here" %>
+        <% end %>
+      </div>
+      <br/>
+      <br/>
+      <div class="subs-list">
+        <p>
+          <h3>Are you a Recruiter?</h3>
+          Subscribe here for latest news and offers
+        </p>
+        <hr/>
+        <%= simple_form_for @subscriber, :url => "/subscribe" do |f| %>
+          <%= f.input :sub_type, :as => :hidden, :input_html => {:value => "recruiter"} %>
+          <div class="controls-row">
+            <div class="span2">
+              <%= f.label "Email:" %>
+            </div>
+            <div class="span5">
+              <%= f.text_field :email %>
+            </div>
+          </div>
+          <%= f.button :submit, :value => "Subscribe Here" %>
+        <% end %>
+      </div>
+  </div><!--/.well -->
+</div><!--/span-->
+<div class="span8">
+  <div class="hero-unit">
+    <iframe src="http://player.vimeo.com/video/55491848" width="600" height="350" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+  </div>
+</div><!--/span-->

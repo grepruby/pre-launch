@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= content_for?(:title) ? yield(:title) : "Pre Launch" %></title>
+  <%= stylesheet_link_tag "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="#">Pre Launch Site</a>
+      <div class="nav-collapse collapse">
+        <p class="navbar-text pull-right">
+
+        </p>
+        <ul class="nav">
+          <% #= render "shared/sidebar_menu"%>
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+
+<div>
+<div class="flash row margin-auto">
+  <div class="span12 full-width">
+    <% if flash[:alert] %>
+      <p class="alert"> 
+        <%= flash[:alert].html_safe %>
+      </p>
+    <% end %>
+    <% if flash[:notice] %>
+      <p class="notice"> 
+        <%= flash[:notice].html_safe %>
+      </p>
+    <% end %>
+  </div>
+</div>
+</div>
+
+<div class="container-fluid">
+  <div class="row-fluid">
+    <%= yield%>  
+  </div><!--/row-->
+
+  <hr>
+
+  <footer>
+    <p>© Company 2012</p>
+  </footer>
+
+</div><!--/.fluid-container-->
+</body>
+</html>
